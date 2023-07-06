@@ -1,0 +1,39 @@
+{
+  "name": "scheer/domain1",
+  "type": "typo3-cms-extension",
+  "description": "my test area",
+  "authors": [
+    {
+      "name": "Scheer, Timon",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^12.0.0|dev-main",
+    "typo3/cms-fluid-styled-content": "^12.0.0|dev-main"
+  },
+  "homepage": "https://github.com/",
+  "license": "MIT",
+  "keywords": [
+    "typo3",
+    "site package",
+    "documentation"
+  ],
+  "support": {
+    "issues": "https://github.com/"
+  },
+  "autoload": {
+    "psr-4": {
+      "SCHEER\\Domain1\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "web-dir": ".Build/public",
+      "extension-key": "domain1"
+    },
+    "branch-alias": {
+      "dev-master": "12.0.x-dev"
+    }
+  }
+}

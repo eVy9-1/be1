@@ -1,0 +1,55 @@
+## page object
+page = PAGE
+
+## Meta-Tags
+page.meta {
+    viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+}
+
+## Der Debug-Mode wird eingestellt
+config {
+    contentObjectExceptionHandler = 0
+}
+
+## setup the favicon
+page.shortcutIcon = EXT:domain1/Resources/Public/Assets/favicon.ico
+
+## CSS files
+page.includeCSS {
+    100 = EXT:domain1/Resources/Public/Css/styles.css
+}
+
+## JavaScript files
+page.includeJSFooterlibs {
+    200 = EXT:domain1/Resources/Public/JavaScript/scripts.js
+}
+
+## setup the fluid template
+page.300 = FLUIDTEMPLATE
+page.300 {
+
+    layoutRootPath = EXT:domain1/Resources/Private/Layouts/
+    layoutRootPaths = EXT:domain1/Resources/Private/Layouts/
+
+    partialRootPath = EXT:domain1/Resources/Private/Partials/
+    partialRootPaths = EXT:domain1/Resources/Private/Partials/
+
+    templateRootPath = EXT:domain1/Resources/Private/Templates/
+    templateRootPaths = EXT:domain1/Resources/Private/Templates/
+
+    ##settings
+    settings {
+        siteLogo = EXT:domain1/Resources/Public/Assets/img/logos/ibm.svg
+        siteTitle = Ranz
+        rootId = 1
+    }
+}
+
+
+
+page.bodyTagCObject = TEXT
+page.bodyTagCObject.data = pagelayout
+page.bodyTagCObject.wrap = <body class="layout-|">
+
+
+
