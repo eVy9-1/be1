@@ -1,55 +1,88 @@
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+
 ## page object
 page = PAGE
+page {
+    typeNum = 0
+    meta {
+        viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+    }
+    ## setup the favicon
+    shortcutIcon = EXT:domain1/Resources/Public/Assets/favicon.ico
 
-## Meta-Tags
-page.meta {
-    viewport = width=device-width, initial-scale=1, shrink-to-fit=no
-}
+    ## CSS files
+    includeCSS {
+        0 = EXT:domain1/Resources/Public/Css/styles.css
+        1 = EXT:domain1/Resources/Public/Css/montserrat-400-700.css
+        2 = EXT:domain1/Resources/Public/Css/roboto-slab-400-100-300-700.css
+    }
 
-## Der Debug-Mode wird eingestellt
-config {
-    contentObjectExceptionHandler = 0
-}
-
-## setup the favicon
-page.shortcutIcon = EXT:domain1/Resources/Public/Assets/favicon.ico
-
-## CSS files
-page.includeCSS {
-    100 = EXT:domain1/Resources/Public/Css/styles.css
-}
-
-## JavaScript files
-page.includeJSFooterlibs {
-    200 = EXT:domain1/Resources/Public/JavaScript/scripts.js
-}
-
-## setup the fluid template
-page.300 = FLUIDTEMPLATE
-page.300 {
-
-    layoutRootPath = EXT:domain1/Resources/Private/Layouts/
-    layoutRootPaths = EXT:domain1/Resources/Private/Layouts/
-
-    partialRootPath = EXT:domain1/Resources/Private/Partials/
-    partialRootPaths = EXT:domain1/Resources/Private/Partials/
-
-    templateRootPath = EXT:domain1/Resources/Private/Templates/
-    templateRootPaths = EXT:domain1/Resources/Private/Templates/
-
-    ##settings
-    settings {
-        siteLogo = EXT:domain1/Resources/Public/Assets/img/logos/ibm.svg
-        siteTitle = Ranz
-        rootId = 1
+    ## JavaScript files
+    includeJSFooterlibs {
+        0 = EXT:domain1/Resources/Public/JavaScript/scripts.js
+        1 = EXT:domain1/Resources/Public/JavaScript/bootstrap.bundle.min.js
+        2 = EXT:domain1/Resources/Public/JavaScript/font-awesome.js
+        3 = EXT:domain1/Resources/Public/JavaScript/sb-forms-0.4.1.js
     }
 }
 
+## settings
+config {
+    # enable extended debug mode
+    contentObjectExceptionHandler = 0
+}
 
+## setup the fluid template
+page.10 = FLUIDTEMPLATE
+page.10 {
+    templateName = TEXT
+    templateName {
+        cObject = TEXT
+        cObject {
+            data = pagelayout
+            required = 1
+            case = ucfirst
+            split {
+                token = pagets__
+                cObjNum = 1
+                1.current = 1
+            }
+        }
+        ifEmpty = Default
+    }
 
-page.bodyTagCObject = TEXT
-page.bodyTagCObject.data = pagelayout
-page.bodyTagCObject.wrap = <body class="layout-|">
+    layoutRootPaths {
+        0 = EXT:domain1/Resources/Private/Layouts/Page/
+        1 = {$page.fluidtemplate.layoutRootPath}
+    }
+    partialRootPaths {
+        0 = EXT:domain1/Resources/Private/Partials/Page/
+        1 = {$page.fluidtemplate.partialRootPath}
+    }
+    templateRootPaths {
+        0 = EXT:domain1/Resources/Private/Templates/Page/
+        1 = {$page.fluidtemplate.templateRootPath}
+    }
 
+    ##settings
+    settings {
+        siteLogo = EXT:domain1/Resources/Public/Assets/img/navbar-logo.svg
+    }
 
-
+    ## main menu
+    dataProcessing {
+        0 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        0 {
+            as = mainMenu
+            expandAll = 1
+            titleField = nav_title // title
+            levels = 1
+        }
+        10 = files
+        10 {
+            as = backgroundImage
+            references.fieldName = media
+            references.table = pages
+        }
+    }
+}

@@ -1,0 +1,15 @@
+#@import 'EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript'
+
+page {
+    fluidtemplate {
+        layoutRootPath = EXT:domain1/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:domain1/Resources/Private/Partials/Page/
+        templateRootPath = EXT:domain1/Resources/Private/Templates/Page/
+    }
+}
+
+# logo file path
+navbar-logo = EXT:domain1/Resources/Public/Assets/img/navbar-logo.svg
+
+# portfolio pics
+portfolio1 = EXT:domain1/Resources/Public/Assets/img/portfolio/1.jpg

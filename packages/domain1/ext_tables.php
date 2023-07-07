@@ -7,4 +7,3 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('domain1', 'Configuration/TypoScript', 'domain1 package');
     }
 );
-

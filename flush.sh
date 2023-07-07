@@ -1,0 +1,1 @@
+cd /home/tscheer/Projects/be1/ && ddev typo3 cache:flush
