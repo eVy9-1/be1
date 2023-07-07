@@ -1,1 +1,18 @@
+TCEFORM.tt_content.header_layout {
+    altLabels {
+        0 = Standardüberschrift / h2
+        1 = Seitenüberschrift / h1
+        2 = Überschrift / h3
+        3 = Überschrift / h4
+    }
+    removeItems = 4, 5
 
+    label = Layout
+}
+
+TCEFORM.tt_content.header_link.disabled = 0
+
+
+TCEFORM.tt_content.layout.addItems {
+    5 = Responsive Video
+}

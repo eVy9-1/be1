@@ -1,5 +1,14 @@
 @import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
 
+## form plugin
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:domain1/Configuration/Form/ContactForm1.yaml
+        }
+    }
+}
+
 ## page object
 page = PAGE
 page {
@@ -67,6 +76,7 @@ page.10 {
     ##settings
     settings {
         siteLogo = EXT:domain1/Resources/Public/Assets/img/navbar-logo.svg
+        rootId = 1
     }
 
     ## main menu
@@ -84,5 +94,65 @@ page.10 {
             references.fieldName = media
             references.table = pages
         }
+    }
+
+    ##
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+        key.data = pagelayout
+
+        pagets__1col                = TEXT
+        pagets__1col.value          = EXT:domain1/Resources/Private/Templates/1col.html
+
+        pagets__1colslider          = TEXT
+        pagets__1colslider.value    = EXT:domain1/Resources/Private/Templates/1colslider.html
+
+        pagets__2col                = TEXT
+        pagets__2col.value          = EXT:domain1/Resources/Private/Templates/2col.html
+
+        pagets__3col                = TEXT
+        pagets__3col.value          = EXT:domain1/Resources/Private/Templates/3col.html
+
+        pagets__1row2col1row        = TEXT
+        pagets__1row2col1row.value  = EXT:domain1/Resources/Private/Templates/1row2col1row.html
+
+        pagets__1row3col1row        = TEXT
+        pagets__1row3col1row.value  = EXT:domain1/Resources/Private/Templates/1row3col1row.html
+
+        pagets__3row                = TEXT
+        pagets__3row.value          = EXT:domain1/Resources/Private/Templates/3row.html
+
+        default < .pagets__2col
+    }
+
+    ## Die Variablen
+    variables {
+        content0 < styles.content.get
+        content0.select.where = colPos = 0
+
+        content1 < styles.content.get
+        content1.select.where = colPos = 1
+
+        content2 < styles.content.get
+        content2.select.where = colPos = 2
+
+        content3 < styles.content.get
+        content3.select.where = colPos = 3
+
+        content4 < styles.content.get
+        content4.select.where = colPos = 4
+
+        content5 < styles.content.get
+        content5.select.where = colPos = 5
+
+        content6 < styles.content.get
+        content6.select.where = colPos = 6
+
+        content7 < styles.content.get
+        content7.select.where = colPos = 7
+
+        content8 < styles.content.get
+        content8.select.where = colPos = 8
+
     }
 }

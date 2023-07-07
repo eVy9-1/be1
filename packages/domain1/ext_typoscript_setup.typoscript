@@ -1,0 +1,7 @@
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:domain1/Configuration/Form/ContactForm1.yaml
+        }
+    }
+}

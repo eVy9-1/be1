@@ -4,16 +4,14 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <f:link.page pageUid="{settings.rootId}" class="navbar-brand" title="">
-                <f:image src="{f:uri.image(image:backgroundImage.1.originalFile)}" alt="" class="img-fluid" width="250"></f:image>
+                <f:image src="{settings.siteLogo}" alt="" class="img-fluid" width="250"></f:image>
             </f:link.page>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <f:for each="{mainMenu}" as="mainMenuItem" iteration="menuIterator">
+                    <f:for each="{mainMenu}" as="mainMenuItem">
                         <li class="nav-item">
-                            <f:variable name="menuItemName" value="{mainMenu.{menuIterator.index}.title}"></f:variable>
-                            <a class="nav-link {f:if(condition:'{mainMenuItem.current}', then: 'current')}"
-                               href="#{f:format.case(mode: 'lower', value: menuItemName)}">
-                                {mainMenuItem.title}
+                            <a class="nav-link {f:if(condition:'{mainMenuItem.current}', then: 'current')}" href="{mainMenuItem.link}">
+                                {mainMenuItem.data.title}
                             </a>
                         </li>
                     </f:for>
