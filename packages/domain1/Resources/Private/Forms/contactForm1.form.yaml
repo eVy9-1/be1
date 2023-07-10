@@ -1,0 +1,87 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+identifier: contactForm1
+label: contactForm1
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'email from {name} - {email}'
+      recipients:
+        cenaa8@gmx.de: ''
+      senderAddress: '{email}'
+      senderName: '{name}'
+      format: html
+      attachUploads: true
+      translation:
+        language: default
+      title: 'Confirmation of your message'
+      addHtmlPart: true
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-1
+    label: 'Contact Form'
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: name
+        label: Name
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: Email
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Email address'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Message
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            step: 1
+        type: Number
+        identifier: number-1
+        label: Number
+        validators:
+          -
+            identifier: Number
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: summarypage
+    label: 'Summary page'
+    type: SummaryPage

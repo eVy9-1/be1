@@ -9,6 +9,25 @@ plugin.tx_form {
     }
 }
 
+## frontend rendering
+lib.contentElement {
+    templateRootPaths.200 = EXT:domain1/Resources/Private/Templates/Page/
+}
+
+## rendering of custom content element
+tt_content {
+    tx_domain1_services_element =< lib.contentElement
+    tx_domain1_services_element {
+        templateName = Services
+    }
+
+    tx_domain1_services_element2 =< lib.contentElement
+    tx_domain1_services_element2 {
+        templateName = Portfolio
+    }
+
+}
+
 ## page object
 page = PAGE
 page {
@@ -100,29 +119,7 @@ page.10 {
     file.stdWrap.cObject = CASE
     file.stdWrap.cObject {
         key.data = pagelayout
-
-        pagets__1col                = TEXT
-        pagets__1col.value          = EXT:domain1/Resources/Private/Templates/1col.html
-
-        pagets__1colslider          = TEXT
-        pagets__1colslider.value    = EXT:domain1/Resources/Private/Templates/1colslider.html
-
-        pagets__2col                = TEXT
-        pagets__2col.value          = EXT:domain1/Resources/Private/Templates/2col.html
-
-        pagets__3col                = TEXT
-        pagets__3col.value          = EXT:domain1/Resources/Private/Templates/3col.html
-
-        pagets__1row2col1row        = TEXT
-        pagets__1row2col1row.value  = EXT:domain1/Resources/Private/Templates/1row2col1row.html
-
-        pagets__1row3col1row        = TEXT
-        pagets__1row3col1row.value  = EXT:domain1/Resources/Private/Templates/1row3col1row.html
-
-        pagets__3row                = TEXT
-        pagets__3row.value          = EXT:domain1/Resources/Private/Templates/3row.html
-
-        default < .pagets__2col
+        default < default
     }
 
     ## Die Variablen
@@ -153,6 +150,5 @@ page.10 {
 
         content8 < styles.content.get
         content8.select.where = colPos = 8
-
     }
 }

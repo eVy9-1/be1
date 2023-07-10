@@ -1,11 +1,18 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:spaceless>
-    <header class="masthead" style="background-image: url('{f:uri.image(image:backgroundImage.0.originalFile)}');')">
-        <div class="container">
-            <div class="masthead-subheading">{data.nav_title}</div>
-            <div class="masthead-heading text-uppercase">{data.subtitle}</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services">{data.title}</a>
-        </div>
-    </header>
+    <f:if condition="{data.pid} == 0">
+        <f:then>
+            <header class="masthead" style="background-image: url('{f:uri.image(image:backgroundImage.0.originalFile)}')">
+                <div class="container">
+                    <div class="masthead-subheading">{data.nav_title}</div>
+                    <div class="masthead-heading text-uppercase">{data.subtitle}</div>
+                    <a class="btn btn-primary btn-xl text-uppercase" href="https://be1.ddev.site/">{data.title}</a>
+                </div>
+            </header>
+        </f:then>
+        <f:else>
+
+        </f:else>
+    </f:if>
 </f:spaceless>
 </html>
