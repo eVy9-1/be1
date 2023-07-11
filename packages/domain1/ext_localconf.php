@@ -15,3 +15,14 @@ ExtensionManagementUtility::addPageTSConfig('@import "EXT:domain1/Configuration/
     'constants',
     "@import 'EXT:domain1/Configuration/TypoScript/constants.typoscript'"
 );
+
+(function () {
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'domain1',
+        'tx_domain1_portfolio',
+        [
+            'Example' => 'example'
+        ]
+    );
+})();
+

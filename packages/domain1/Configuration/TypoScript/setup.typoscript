@@ -9,9 +9,12 @@ plugin.tx_form {
     }
 }
 
-## frontend rendering
+##
 lib.contentElement {
     templateRootPaths.200 = EXT:domain1/Resources/Private/Templates/Page/
+    list {
+        templateName = Index
+    }
 }
 
 ## rendering of custom content element
@@ -20,12 +23,6 @@ tt_content {
     tx_domain1_services_element {
         templateName = Services
     }
-
-    tx_domain1_services_element2 =< lib.contentElement
-    tx_domain1_services_element2 {
-        templateName = Portfolio
-    }
-
 }
 
 ## page object

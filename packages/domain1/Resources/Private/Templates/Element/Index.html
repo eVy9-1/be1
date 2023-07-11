@@ -1,0 +1,23 @@
+<f:flashMessages />
+<f:for each="{elements}" as="element">
+    <h3>
+        {element.tx_domain1_portfolio_main_header}<br>
+        {element.tx_domain1_portfolio_main_subheader}<br>
+
+        {element.tx_domain1_portfolio_picture_id}<br>
+        {element.tx_domain1_portfolio_picture_header}<br>
+        {element.tx_domain1_portfolio_picture_text}<br>
+    </h3>
+    <f:link.action action="edit" arguments="{element: element}">Edit</f:link.action>
+
+
+
+
+<f:comment>
+    <h3>{address.companyName}</h3>
+    <address>
+        {address.street} {address.houseNumber}
+        {address.zip} {address.city}
+        {address.country}
+        <f:link.action action="edit" arguments="{address: address}">Edit</f:link.action>
+</f:comment>
