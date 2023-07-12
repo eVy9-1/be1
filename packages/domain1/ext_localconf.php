@@ -2,6 +2,7 @@
 defined('TYPO3') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 ExtensionManagementUtility::addPageTSConfig('@import "EXT:domain1/Configuration/TsConfig/Page.tsconfig"');
 
 
@@ -16,13 +17,13 @@ ExtensionManagementUtility::addPageTSConfig('@import "EXT:domain1/Configuration/
     "@import 'EXT:domain1/Configuration/TypoScript/constants.typoscript'"
 );
 
-(function () {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'domain1',
-        'tx_domain1_portfolio',
-        [
-            'Example' => 'example'
-        ]
-    );
-})();
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'domain1',
+    'TestPlugin',
+    [
+        \SCHEER\Domain1\Controller\ElementController::class => 'index',
+    ]
+);
+
 

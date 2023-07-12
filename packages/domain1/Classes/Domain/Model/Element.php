@@ -6,31 +6,30 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Element extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected string $main_header;
-    protected string $sub_header;
-    protected int $picture_id;
-    protected string $picture_text;
-    protected string $client;
-    protected string $category;
+
+    protected string    $mainheader;
+    protected string    $subheader;
+    protected string    $picturetext;
+    protected string    $client;
+    protected string    $category;
+
+    protected int       $pictureid;
 
     public function getMainHeader(): string
     {
-        return $this->main_header;
+        return $this->mainheader;
     }
     public function getSubHeader(): string
     {
-        return $this->sub_header;
+        return $this->subheader;
     }
-    public function getPictureId(): string
+    public function getPictureId(): int
     {
-        return $this->picture_id;
+        return $this->pictureid;
     }
     public function getPictureText(): string
     {
-        return $this->picture_text;
+        return $this->picturetext;
     }
     public function getClient(): string
     {

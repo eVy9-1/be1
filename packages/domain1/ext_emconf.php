@@ -1,5 +1,5 @@
 <?php
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['domain1'] = [
     'title' => 'domain1',
     'description' => '',
     'category' => 'plugin',
@@ -14,5 +14,10 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'conflicts' => [],
         'suggests' => [],
+    ],
+    'autoload' => [
+        'psr-4' => [
+            'SCHEER\\Domain1\\' => 'Classes',
+        ]
     ],
 ];

@@ -3,9 +3,9 @@
 // Record Settings
 return [
     'ctrl' => [
-        'title' => 'Portfolio',
-        'label' => 'main_header',
-        'label_alt' => 'sub_header',
+        'title' => 'title',
+        'label' => 'client',
+        'label_alt' => 'category',
         'label_alt_force' => true,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -26,7 +26,7 @@ return [
         'maxSingleDBListItems' => 500,
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, hidden, main_header, sub_header, picture_id, picture_text, client, category'],
+        '1' => ['showitem' => 'sys_language_uid, hidden, mainheader, subheader, pictureid, picturetext, client, category'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -48,10 +48,10 @@ return [
                         0,
                     ],
                 ],
-                'foreign_table' => 'tx_domain1_domain_model_portfolio',
+                'foreign_table' => 'tx_domain1_domain_model_element',
                 'foreign_table_where' =>
-                    'AND {#tx_domain1_domain_model_portfolio}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_domain1_domain_model_portfolio}.{#sys_language_uid} IN (-1,0)',
+                    'AND {#tx_domain1_domain_model_element}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_domain1_domain_model_element}.{#sys_language_uid} IN (-1,0)',
                 'default' => 0,
             ],
         ],
@@ -88,7 +88,7 @@ return [
                 ],
             ],
         ],
-        'main_header' => [
+        'mainheader' => [
             'label' => 'Hauptüberschrift',
             'config' => [
                 'type' => 'input',
@@ -98,7 +98,7 @@ return [
                 'max' => 256,
             ],
         ],
-        'sub_header' => [
+        'subheader' => [
             'label' => 'Unterüberschrift',
             'config' => [
                 'type' => 'input',
@@ -108,16 +108,16 @@ return [
                 'max' => 256,
             ],
         ],
-        'picture_id' => [
-            'label' => 'Bilddatei1',
+        'pictureid' => [
+            'label' => 'Die Bilddatei',
             'config' => [
                 'type' => 'file',
                 'maxitems' => 1,
                 'allowed' => 'common-image-types'
             ],
         ],
-        'picture_text' => [
-            'label' => 'Bilduntertext',
+        'picturetext' => [
+            'label' => 'Der Bildertext',
             'description' => 'cols=20, rows=4',
             'config' => [
                 'type' => 'text',

@@ -130,12 +130,13 @@ $GLOBALS['TCA']['tt_content']['types']['tx_domain1_services_element'] = [
          ',
 ];
 
+
 ## Register my first plugin
-(function () {
+
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-        'domain1',
-        'tx_domain1_portfolio',
+        'Domain1',
+        'TestPlugin',
         'Domain1 Portfolio Site Plugin'
     );
-})();
+
 
