@@ -13,7 +13,8 @@ CREATE TABLE tt_content (
 CREATE TABLE tx_domain1_domain_model_element (
     mainheader             varchar(255) DEFAULT '' NOT NULL,
     subheader              varchar(255) DEFAULT '' NOT NULL,
-    pictureid              int(11) DEFAULT '0' NOT NULL,
+    picture                int(11) unsigned NOT NULL default '0',
+    pictureid              int(11) unsigned NOT NULL default '0',
     picturetext            text DEFAULT '' NOT NULL,
     client                 varchar(255) DEFAULT '' NOT NULL,
     category               varchar(255) DEFAULT '' NOT NULL,

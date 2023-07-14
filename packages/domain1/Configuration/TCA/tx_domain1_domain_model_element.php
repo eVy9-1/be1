@@ -3,7 +3,7 @@
 // Record Settings
 return [
     'ctrl' => [
-        'title' => 'title',
+        'title' => 'Portfolio Record',
         'label' => 'client',
         'label_alt' => 'category',
         'label_alt_force' => true,
@@ -26,7 +26,7 @@ return [
         'maxSingleDBListItems' => 500,
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, hidden, mainheader, subheader, pictureid, picturetext, client, category'],
+        '1' => ['showitem' => 'sys_language_uid, hidden, mainheader, subheader, picture, pictureid, picturetext, client, category'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -106,6 +106,14 @@ return [
                 'eval' => 'trim',
                 'required' => true,
                 'max' => 256,
+            ],
+        ],
+        'picture' => [
+            'label' => 'Die Bilddatei',
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'common-image-types'
             ],
         ],
         'pictureid' => [

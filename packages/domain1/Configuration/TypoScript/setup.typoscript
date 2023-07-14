@@ -14,6 +14,14 @@ lib.contentElement {
     templateRootPaths.200 = EXT:domain1/Resources/Private/Templates/Page/
     list {
         templateName = Index
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.table = tx_domain1_domain_model_element
+                references.fieldName = picture
+                as = files
+            }
+        }
     }
 }
 

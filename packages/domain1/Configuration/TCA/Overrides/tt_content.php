@@ -132,7 +132,6 @@ $GLOBALS['TCA']['tt_content']['types']['tx_domain1_services_element'] = [
 
 
 ## Register my first plugin
-
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
         'Domain1',
         'TestPlugin',
