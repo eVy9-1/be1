@@ -19,3 +19,20 @@ CREATE TABLE tx_domain1_domain_model_element (
     client                 varchar(255) DEFAULT '' NOT NULL,
     category               varchar(255) DEFAULT '' NOT NULL,
 );
+
+CREATE TABLE tx_beratungsstellen_domain_model_beratungsstelle (
+    name                    varchar(255) DEFAULT '' NOT NULL,
+    street                  varchar(255) DEFAULT '' NOT NULL,
+    city                    varchar(255) DEFAULT '' NOT NULL,
+    plz                     int(11) DEFAULT '0' NOT NULL,
+    longitude               int(11) DEFAULT '0' NOT NULL,
+    latitude                int(11) DEFAULT '0' NOT NULL,
+    link                    varchar(255) DEFAULT '' NOT NULL,
+    email                   varchar(255) DEFAULT '' NOT NULL,
+);
+
+CREATE TABLE tx_beratungsstellen_domain_model_keyword (
+    keyword                 varchar(255) DEFAULT '' NOT NULL,
+    description             varchar(255) DEFAULT '' NOT NULL,
+);
+
